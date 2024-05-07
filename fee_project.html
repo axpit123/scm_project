@@ -373,5 +373,75 @@ the 2023-2024 season</pre></a>
     <div class="space"></div>
 
     </footer>
+            <script>
+        const apiKey="519cf5ee243b62ca82319305c0beb384";
+        const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const apiKey1="358645117c0d48d89e15b77155a09055";
+        const apiUrl1="https://api.openweathermap.org/data/2.5/forecast?units=metric&q=";
+        const searchbtn=document.getElementById("button");
+        const searchbox=document.querySelector(".search");
+        const weathericon=document.querySelector(".weathericon");
+        async function checkweather(city){
+            const response=await fetch(apiUrl+ city +`&appid=${apiKey}`);
+            var data=await response.json();
+            const response1=await fetch(apiUrl1+ city +`&appid=${apiKey1}`);
+            var data1=await response1.json();
+            setInterval(()=>{
+                let d=new Date();
+                document.querySelector(".time").innerHTML=d.toLocaleTimeString()
+                document.getElementById("time1").innerHTML=d.toLocaleTimeString()
+                document.getElementById("time2").innerHTML=d.toLocaleTimeString()
+            },1000)
+               
+            
+            console.log(data);
+            console.log(data1);
+            document.querySelector(".temp").innerHTML=Math.round(data.main.temp) + "°c";
+            document.querySelector(".feel").innerHTML="feels like:" + Math.round(data.main.feels_like) + "°c";
+            document.querySelector(".wind").innerHTML="Wind Speed:" + data.wind.speed + "Km/hr";
+            document.querySelector(".location").innerHTML="📌 " +  data.name + "," +  data.sys.country;
+            document.getElementById("temp1").innerHTML= Math.round(data1.list[1].main.temp) + "°c";
+            document.getElementById("feel1").innerHTML="feels like:" +Math.round(data1.list[1].main.feels_like) + "°c";
+            document.getElementById("wind1").innerHTML="Wind Speed:" + data1.list[1].wind.speed + "Km/hr";
+            document.getElementById("temp2").innerHTML= Math.round(data1.list[0].main.temp) + "°c";
+            document.getElementById("feel2").innerHTML="feels like:" +Math.round(data1.list[0].main.feels_like) + "°c";
+            document.getElementById("wind2").innerHTML="Wind Speed:" + data1.list[0].wind.speed + "Km/hr";
+
+            if (data.weather[0].main== "Clouds"){
+                weathericon.src="clouds.png"
+            }
+            else if(data.weather[0].main=="Clear"){
+                weathericon.src="clear.png"
+            }
+            else if(data.weather[0].main=="Rain"){
+                weathericon.src="rain.png"
+            }
+            else if(data.weather[0].main=="Drizzle"){
+                weathericon.src="drizzle.png"
+            }
+            else if(data.weather[0].main=="Mist"){
+                weathericon.src="mist.png"
+            }
+            else if(data.weather[0].main=="Haze"){
+                weathericon.src="snow.png"
+            }
+            else if(data.weather[0].main="Smoke"){
+                weathericon.src="smoke.png"
+            }
+            else if(data.message=="city not found"){
+                document.querySelector(".temp").innerHTML="CITY NOT FOUND"
+            }
+
+            
+            
+
+        }
+        searchbtn.addEventListener("click",()=>{
+            checkweather(searchbox.value);
+            
+        })
+        
+
+    </script>
 
 </body>
