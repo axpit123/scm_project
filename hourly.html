@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="icon" href="C:\VSS\icon.jpg" type="icon">
+    <style>
+            * { 
+                font-family: arial;
+                box-sizing: border-box;
+                font-weight: 700;
+            }
+            .navbar {
+            height: 20px;
+        
+            color:#880808;
+            font-size: 18px;
+            padding: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: crosshair;
+            display: flex;
+            align-items: center;
+
+        }
+        .container{
+            display: flex;
+            height:400px;
+            width: 100%;
+        }
+
+        .search {
+            float: right;
+            width: 200px;
+            border: none;
+        }
+
+        p {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .myclass {
+            height: 400px;
+            width: 50%;
+            margin-top: 50px;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #9e63be;
+            opacity: 0.75;
+            border-radius: 10px;
+
+        }
+
+        p {
+            font-size: 28px;
+
+        }
+
+        body{
+            background-image:url(background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: contain;
+         
+        }
+
+        a {
+            margin-left: 70px;
+            font-size: larger;
+        }
+
+        .scroll {
+            height: 40px;
+            padding: 20px;
+           font-size: 16.5px;
+           color:white;
+        }
+        .btn{
+            border:2px solid transparent;
+            outline: none;
+            transition: all;
+            margin-left: 170px;
+        }
+        .btn:hover {
+         border: 2px solid white;
+        }
+        .search-input{
+            display: flex;
+            margin-left: 100px;
+            height: 40px;
+        }
+        .search-button{
+            border: none;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: darkgoldenrod;
+            text-align: center;
+        }
+        .class{
+            height: 400px;
+            width: 50%;
+            margin-top: 100px;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #9e63be;
+            opacity: 0.75;
+            border-radius: 10px;
+        }
+        .class1{
+            height: 400px;
+            width: 50%;
+            margin-top: 60px;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #9e63be;
+            opacity: 0.75;
+            border-radius: 10px;
+        }
+        .video-class{
+            position: absolute;
+            right: 0;
+            bottom:0;
+            z-index:-1;
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+        }
+        .news{
+            background-color:#E95793;
+            opacity: 0.8;
+            width: 400px;
+            margin-left: 150px;
+            margin-right: 100px;
+            height: 580px;
+            margin-top: 200px;
+            border: none;
+            background-repeat: no-repeat;
+            background-size: contain;
+            text-align: center;
+            border-radius: 10px;
+            
+        }
+        .image{
+            border-radius: 10px;
+            float:right;
+            margin-right: 30px;
+        
+        }
+        .font{
+            padding-bottom:20px;
+            height: 100px;
+            text-align: left;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .first{
+            height: 90px;
+        }
+      
+        .sassy{
+            font-size: larger;
+            height: 50px;
+            width: 270px;
+            background-color:#aa96da;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .second{
+            height: 90px;
+            text-align: left;
+            margin-left: 10px;
+            font-size: large;
+        }
+        .hr{
+            height: 50px;
+        }
+        footer{
+            background-color: #111;
+            width: 100%;
+           
+        }
+        .footer-class{
+            display: flex;
+            justify-content: center;
+            padding: 70px ;
+           
+        }
+        .footer-nav{
+            color: white;
+            display: flex;
+            justify-content: center;
+            opacity: 0.75;
+        }
+        .footer-nav:hover{
+            opacity: 1;
+        }
+        .footer-class a{
+            background-color: white;
+            color: #000;
+            margin: 10px;
+            width: 30px;
+            border-radius: 50%;
+            padding: 5px;
+
+        }
+        .copyright{
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        .copyright p{
+            color: white;
+            font-size: large;
+        }
+        .designer{
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+        .feedback-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+       
+        .location{
+            color: white;
+        }
+        button{
+            border-top-right-radius: 10px;
+            border: none;
+            border-bottom-right-radius: 10px;
+        }
+        .weathericon{
+            margin-left: 300px;
+           
+        }
+      
+        
+        .gallery{
+            width: 1300px;
+            overflow-x: scroll;
+            height: 450px;
+            display: flex;
+            margin-top: 100px;
+        
+           
+            
+            
+            
+        }
+        .first{
+            background-color:#9e63be;
+            opacity: 0.8;
+            border-radius: 10px;
+            border: 2px solid black;
+            height: 370px;
+            width: 380px;
+            flex: none;
+            margin-left: 50px;
+        }
+       
+        .gallery-wrap{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+           
+        }
+        .gallery div:hover{
+            cursor: pointer;
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+         .gallery div {
+            filter: grayscale(100%);
+            transition: transform 0.5s;
+            color: blueviolet;
+
+         
+        }
+        .gallery::-webkit-scrollbar{
+            display: none;
+        }
+        img:hover{
+            cursor: pointer;
+        }
+        img{
+            padding: 20px;
+            
+        }
+        #backbtn,#nextbtn{
+           margin-top: 10px;
+        }
+        .heading{
+            text-align: center;
+            color: white;
+        }
+       .date {
+        margin-left: 90px;
+       }
+       .date1{
+        margin-left: 90px;
+       }
+       .date2{
+        margin-left: 90px;
+       }
+       .date3{
+        margin-left: 90px;
+       }
+       .date4{
+        margin-left: 90px;
+       }
+       .date5{
+        margin-left: 90px;
+       }
+
+    </style>
+    <title>welcome to weather.in</title>
+    <script src="https://kit.fontawesome.com/342b0b5926.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   
+ 
+    <!--this is for header-->
+    <div class="navbar">
+        <a><div class="color"><div class="width"><h1 class="location"><i class="fa-solid fa-location-dot"></i><b> Your Location</h1></div></div></b>
+        <a style="margin-left: 250px; color: black;font-size: 20px; cursor: auto;" ><div class="sassy"><b>CLI<font color="#610C9F">MA </font>TR<font color="610C9F">AC</font>KER.<font color="610C9F">IN</font></b></div></a>
+       <div class="search-input"><select class="search-button"><option>ALL</option><option><a href="today.html">TODAY</a></option><option>HOURLY</option><option>DAILY</option><option>RADAR</option><option value="MONTHLY"></option>
+       <option value=""></option></select>
+        <input  class="search" placeholder="search any place/city"><button><i id="button" style= "padding: 10px;background-color:white;border-top-right-radius:10px;color:black;border-bottom-right-radius: 10px;" class="fa-solid fa-magnifying-glass"></i></button></div>
+
+
+
+        <!--this is for navigation bar-->
+    </div>
+    <div class="scroll">
+        <a href="today.html" class="btn"><strong>TODAY</a>
+        <a href="hourly.html" class="btn">HOURLY</a>
+        <a href="daily.html"  class="btn">DAILY</a>
+        <a href="radar.html" class="btn">MAP</a>
+        <a href="health&activties.html" class="btn">HEALTH&ACTIVITIES</strong></a>
+
+
+
+    </div>
+    <hr>
+    <a href="feedback.html">  <button class="feedback-button">Feedback</button>
+    </a>
+    <div class="gallery-wrap">
+        <img  id="backbtn" src="back.png" height="100px" width="100px">
+        <div class="gallery">
+            <div class="first"><h1 class="heading">Temperature</h1>
+                <hr>
+                <h3 class="date"></h3>
+            <h2 class="temp">Temp:</h2>
+            <h2 class="feel">Feels_like:</h2>
+        <h2 class="temp_min">Temp_min:</h2>
+    <h2 class="temp_max">Temp_max:</h2>
+<h2 class="wind">Wind speed:</h2></div>
+            <div class="first"><h1 class="heading">Temperature</h1>
+            <hr>
+            <h3 class="date1"></h3>
+            <h2 class="temp1">Temp:</h2>
+            <h2 class="feel1">Feels_like</h2>
+            <h2 class="temp_min1">Temp_min:</h2>
+            <h2 class="temp_max2">Temp_max:</h2>
+            <h2 class="wind1">Wind speed:</h2>
+        </div>
+            <div class="first"><h1 class="heading">Temperature</h1>
+            <hr>
+            <h3 class="date2"></h3>
+            <h2 class="temp2">temp:</h2>
+        <h2 class="feel2">Feels_like:</h2>
+        <h2 class="temp_min2">Temp_min</h2>
+        <h2 class="temp_max3">Temp_max</h2>
+        <h2 class="wind2">Wind speed</h2>
+    </div>
+             <div class="first"><h1 class="heading">Temperature</h1>
+                <hr>
+                <h3 class="date3"></h3>
+                <h2 class="temp3">temp:</h2>
+            <h2 class="feel3">Feels_like:</h2>
+            <h2 class="temp_min3">Temp_min</h2>
+            <h2 class="temp_max4">Temp_max</h2>
+            <h2 class="wind3">Wind speed</h2></div>
+       <div class="first"><h1 class="heading">Temperature</h1>
+                <hr>
+                <h3 class="date4"></h3>
+                <h2 class="temp4">temp:</h2>
+            <h2 class="feel4">Feels_like:</h2>
+            <h2 class="temp_min4">Temp_min</h2>
+            <h2 class="temp_max5">Temp_max</h2>
+            <h2 class="wind4">Wind speed</h2></div>
+       <div class="first"><h1 class="heading">Temperature</h1>
+                <hr>
+                <h3 class="date5"></h3>
+                <h2 class="temp5">temp:</h2>
+            <h2 class="feel5">Feels_like:</h2>
+            <h2 class="temp_min5">Temp_min</h2>
+            <h2 class="temp_max6">Temp_max</h2>
+            <h2 class="wind5">Wind speed</h2></div>
+        </div>
+        <img src="next.png" id="nextbtn" height="100px" width="100px">
+    </div>
+    <footer>
+        <div class="footer-class">
+            <a href="https://instagram.com/arpitxvermaa?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://whatsapp.com/dl/"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://x.com/arnavsaini2005?s=11"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://napkforpc.com/apk/com.google.android.apps.plus/"><i class="fa-brands fa-google-plus"></i></a>
+            <a href="https://youtu.be/pFvWwFua6mw?si=mKEbqhjlI0gfN9Ms"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footer-nav">
+           <a href="#top"><ul>Home</ul></a>
+           <a href="bootstrap.html"><ul>Contact</ul></a>
+            <a href="aboutus.html"><ul>About us</ul></a>
+           <a href="https://weather.com/en-IN/india/news"><ul>News</ul></a>
+           <a href="our founders.html"><ul>Our Founders</ul></a>
+        </div>
+        <div class="copyright">
+            <p>Copyright&copy;2023;Designed by<span class="designer">Arpit;Arnav;Arshdeep</span></p>
+        </div>
+    </footer>
+    <script>
+        const apiKey="358645117c0d48d89e15b77155a09055";
+        const apiUrl="https://api.openweathermap.org/data/2.5/forecast?units=metric&q=";
+        const searchbtn=document.getElementById("button");
+        const searchbox=document.querySelector(".search");
+        const weathericon=document.querySelector(".weathericon");
+        async function checkweather(city){
+            const response=await fetch(apiUrl+ city +`&appid=${apiKey}`);
+            var data=await response.json();
+            setInterval(()=>{
+                let d=new Date();
+                document.querySelector(".time").innerHTML=d.toLocaleTimeString()
+            },1000)
+               
+            
+            console.log(data);
+            document.querySelector(".temp").innerHTML="Temp:" + Math.round(data.list[0].main.temp) + "°c";
+            document.querySelector(".date").innerHTML=data.list[0].dt_txt;
+            document.querySelector(".feel").innerHTML="feels like:" +Math.round(data.list[0].main.feels_like) + "°c";
+            document.querySelector(".wind").innerHTML="Wind Speed:" + data.list[0].wind.speed + "Km/hr";
+            document.querySelector(".location").innerHTML="📌 " +  data.city.name + "," +  data.city.country;
+            document.querySelector(".temp_min").innerHTML="Temp_min: " + Math.round(data.list[0].main.temp_min)+ "°c";
+            document.querySelector(".temp_max").innerHTML="Temp_max: " + Math.round(data.list[0].main.temp_max)+ "°c";
+            document.querySelector(".temp1").innerHTML="Temp:" + Math.round(data.list[1].main.temp) + "°c";
+            document.querySelector(".date1").innerHTML=data.list[1].dt_txt;
+            document.querySelector(".feel1").innerHTML="feels like:" +Math.round(data.list[1].main.feels_like) + "°c";
+            document.querySelector(".wind1").innerHTML="Wind Speed:" + data.list[1].wind.speed + "Km/hr";
+            document.querySelector(".temp_min1").innerHTML="Temp_min: " + Math.round(data.list[1].main.temp_min)+ "°c";
+            document.querySelector(".temp_max2").innerHTML="Temp_max: " + Math.round(data.list[1].main.temp_max)+ "°c";
+            document.querySelector(".temp2").innerHTML="Temp:" + Math.round(data.list[2].main.temp) + "°c";
+            document.querySelector(".date2").innerHTML=data.list[2].dt_txt;
+            document.querySelector(".feel2").innerHTML="feels like:" +Math.round(data.list[2].main.feels_like) + "°c";
+            document.querySelector(".wind2").innerHTML="Wind Speed:" + data.list[2].wind.speed + "Km/hr";
+            document.querySelector(".temp_min2").innerHTML="Temp_min: " + Math.round(data.list[2].main.temp_min)+ "°c";
+            document.querySelector(".temp_max3").innerHTML="Temp_max: " + Math.round(data.list[2].main.temp_max)+ "°c";
+            document.querySelector(".date3").innerHTML=data.list[3].dt_txt;
+            document.querySelector(".temp3").innerHTML="Temp:" + Math.round(data.list[3].main.temp) + "°c";
+            document.querySelector(".feel3").innerHTML="feels like:" +Math.round(data.list[3].main.feels_like) + "°c";
+            document.querySelector(".wind3").innerHTML="Wind Speed:" + data.list[3].wind.speed + "Km/hr";
+            document.querySelector(".temp_min3").innerHTML="Temp_min: " + Math.round(data.list[3].main.temp_min)+ "°c";
+            document.querySelector(".temp_max4").innerHTML="Temp_max: " + Math.round(data.list[3].main.temp_max)+ "°c";
+            document.querySelector(".date4").innerHTML=data.list[4].dt_txt;
+            document.querySelector(".temp4").innerHTML="Temp:" + Math.round(data.list[4].main.temp) + "°c";
+            document.querySelector(".feel4").innerHTML="feels like:" +Math.round(data.list[4].main.feels_like) + "°c";
+            document.querySelector(".wind4").innerHTML="Wind Speed:" + data.list[4].wind.speed + "Km/hr";
+            document.querySelector(".temp_min4").innerHTML="Temp_min: " + Math.round(data.list[4].main.temp_min)+ "°c";
+            document.querySelector(".temp_max5").innerHTML="Temp_max: " + Math.round(data.list[4].main.temp_max)+ "°c";
+            document.querySelector(".date5").innerHTML=data.list[5].dt_txt;
+            document.querySelector(".temp5").innerHTML="Temp:" + Math.round(data.list[5].main.temp) + "°c";
+            document.querySelector(".feel5").innerHTML="feels like:" +Math.round(data.list[5].main.feels_like) + "°c";
+            document.querySelector(".wind5").innerHTML="Wind Speed:" + data.list[5].wind.speed + "Km/hr";
+            document.querySelector(".temp_min5").innerHTML="Temp_min: " + Math.round(data.list[5].main.temp_min)+ "°c";
+            document.querySelector(".temp_max6").innerHTML="Temp_max: " + Math.round(data.list[5].main.temp_max)+ "°c";
+            if (data.weather[0].main== "Clouds"){
+                weathericon.src="clouds.png"
+            }
+            else if(data.weather[0].main=="Clear"){
+                weathericon.src="clear.png"
+            }
+            else if(data.weather[0].main=="Rain"){
+                weathericon.src="rain.png"
+            }
+            else if(data.weather[0].main=="Drizzle"){
+                weathericon.src="drizzle.png"
+            }
+            else if(data.weather[0].main=="Mist"){
+                weathericon.src="mist.png"
+            }
+            else if(data.weather[0].main=="Haze"){
+                weathericon.src="snow.png"
+            }
+            else if(data.weather[0].main="Smoke"){
+                weathericon.src="smoke.png"
+            }
+            else if(data.message=="city not found"){
+                document.querySelector(".temp").innerHTML="CITY NOT FOUND"
+            }
+
+            
+            
+
+        }
+        searchbtn.addEventListener("click",()=>{
+            checkweather(searchbox.value);
+            
+        })
+        var backbtn=document.getElementById("backbtn");
+        var nextbtn=document.getElementById("nextbtn");
+        var scrollcontainer=document.querySelector(".gallery");
+        backbtn.addEventListener("click",() =>{
+            scrollcontainer.style.scrollBehavior="smooth"
+            scrollcontainer.scrollLeft -= 1300;
+
+        })
+        nextbtn.addEventListener("click",()=>{
+            scrollcontainer.style.scrollBehavior="smooth"
+            scrollcontainer.scrollLeft += 1300;
+        })
+        
+
+    </script>
+</body>
